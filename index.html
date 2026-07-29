@@ -11,6 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Hanuman:wght@400;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="icon" type="image/svg+xml" href="./images/favicon.svg">
 </head>
@@ -49,12 +50,12 @@
 
     <section class="hero">
       <div class="container hero-inner">
-        <div class="hero-content">
+        <div class="hero-content" data-aos="fade-right">
           <h1 class="hero-title">Brighten Your Day with Our Stunning Bouquets</h1>
           <p class="hero-text">At Flora, we believe that every occasion deserves a beautiful bouquet. Our expertly crafted arrangements are designed to bring joy and elegance to your celebrations.</p>
           <a href="#bestsellers" class="button button-primary">Explore Our Bestsellers</a>
         </div>
-        <picture class="hero-picture">
+        <picture class="hero-picture" data-aos="fade-left">
           <source type="image/webp" srcset="./images/hero@X1.webp 1x, ./images/hero@X2.webp 2x">
           <img src="./images/hero@X1.jpg" srcset="./images/hero@X2.jpg 2x" alt="Pink and white bouquet tied with ribbon" width="600" height="450" loading="lazy">
         </picture>
@@ -63,14 +64,14 @@
 
     <section id="about" class="about">
       <div class="container about-inner">
-        <div class="about-content">
+        <div class="about-content" data-aos="fade-right">
           <svg class="about-icon" width="96" height="85">
             <use href="./images/icons.svg#flower"></use>
           </svg>
           <h2 class="section-title">Our Passion for Floral Artistry</h2>
           <p class="section-text">At Flora, we believe that every bouquet tells a story. Our team meticulously crafts each arrangement, blending creativity with the freshest blooms to create stunning pieces for every occasion.</p>
         </div>
-        <picture class="about-picture">
+        <picture class="about-picture" data-aos="fade-left">
           <source type="image/webp" srcset="./images/about@X1.webp 1x, ./images/about@X2.webp 2x">
           <img src="./images/about@X1.jpg" srcset="./images/about@X2.jpg 2x" alt="Florist arranging fresh flowers in the shop" width="600" height="428" loading="lazy">
         </picture>
@@ -82,7 +83,7 @@
         <h2 class="section-title">Top-Selling Bouquets</h2>
 
         <ul class="bouquet-list">
-          <li class="bouquet-card">
+          <li class="bouquet-card" data-aos="fade-up" data-aos-delay="100">
             <picture>
               <source type="image/webp" srcset="./images/top-bouquet-1@X1.webp 1x, ./images/top-bouquet-1@X2.webp 2x">
               <img src="./images/top-bouquet-1@X1.jpg" srcset="./images/top-bouquet-1@X2.jpg 2x" alt="Spring Elegance bouquet with peonies, tulips and roses" width="380" height="380" loading="lazy">
@@ -91,7 +92,7 @@
             <p class="bouquet-description">A delicate blend of peonies, tulips, and roses — perfect for springtime gifting and bright smiles.</p>
             <p class="bouquet-price">$35</p>
           </li>
-          <li class="bouquet-card">
+          <li class="bouquet-card" data-aos="fade-up" data-aos-delay="200">
             <picture>
               <source type="image/webp" srcset="./images/top-bouquet-2@X1.webp 1x, ./images/top-bouquet-2@X2.webp 2x">
               <img src="./images/top-bouquet-2@X1.jpg" srcset="./images/top-bouquet-2@X2.jpg 2x" alt="Crimson Rose bouquet with roses and seasonal greenery" width="380" height="380" loading="lazy">
@@ -100,7 +101,7 @@
             <p class="bouquet-description">A stylish composition of roses, seasonal greenery, and vibrant berries — a bold and elegant floral statement.</p>
             <p class="bouquet-price">$55</p>
           </li>
-          <li class="bouquet-card">
+          <li class="bouquet-card" data-aos="fade-up" data-aos-delay="300">
             <picture>
               <source type="image/webp" srcset="./images/top-bouquet-3@X1.webp 1x, ./images/top-bouquet-3@X2.webp 2x">
               <img src="./images/top-bouquet-3@X1.jpg" srcset="./images/top-bouquet-3@X2.jpg 2x" alt="Sunny Bliss bouquet with lavender, lisianthus and roses" width="380" height="380" loading="lazy">
@@ -119,22 +120,22 @@
         <p class="section-text">Explore our stunning selection of fresh flower bouquets.</p>
 
         <ul class="bouquet-list bouquet-list-grid">
-          <li class="bouquet-card">
+          <li class="bouquet-card" data-aos="fade-up" data-aos-delay="0">
             <img src="./images/bouquet-5@X1.jpg" alt="Peach Meadow bouquet with peach and blush roses" width="280" height="280" loading="lazy">
             <h3 class="bouquet-title">Peach Meadow</h3>
             <p class="bouquet-price">$55</p>
           </li>
-          <li class="bouquet-card">
+          <li class="bouquet-card" data-aos="fade-up" data-aos-delay="100">
             <img src="./images/bouquet-6@X1.jpg" alt="Blush Romance bouquet with pink and ivory roses" width="280" height="280" loading="lazy">
             <h3 class="bouquet-title">Blush Romance</h3>
             <p class="bouquet-price">$34</p>
           </li>
-          <li class="bouquet-card">
+          <li class="bouquet-card" data-aos="fade-up" data-aos-delay="200">
             <img src="./images/bouquet-7@X1.jpg" alt="Pastel Garden bouquet with spray roses" width="280" height="280" loading="lazy">
             <h3 class="bouquet-title">Pastel Garden</h3>
             <p class="bouquet-price">$40</p>
           </li>
-          <li class="bouquet-card">
+          <li class="bouquet-card" data-aos="fade-up" data-aos-delay="300">
             <img src="./images/bouquet-8@X1.jpg" alt="Tulip Charm bouquet with bright tulips and roses" width="280" height="280" loading="lazy">
             <h3 class="bouquet-title">Tulip Charm</h3>
             <p class="bouquet-price">$61</p>
@@ -150,15 +151,15 @@
         <h2 class="section-title">What our clients say</h2>
 
         <ul class="feedback-list">
-          <li class="feedback-card">
+          <li class="feedback-card" data-aos="fade-up" data-aos-delay="100">
             <p class="feedback-text">"Flora made my anniversary unforgettable with their beautiful arrangement!"</p>
             <p class="feedback-author">Emma T.</p>
           </li>
-          <li class="feedback-card">
+          <li class="feedback-card" data-aos="fade-up" data-aos-delay="200">
             <p class="feedback-text">Absolutely stunning bouquet! It looked even better than the photo and arrived right on time.</p>
             <p class="feedback-author">Daniel R.</p>
           </li>
-          <li class="feedback-card">
+          <li class="feedback-card" data-aos="fade-up" data-aos-delay="0">
             <p class="feedback-text">The service was exceptional, and the flowers were fresh!</p>
             <p class="feedback-author">Olivia M.</p>
           </li>
@@ -237,6 +238,13 @@
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script src="./js/mobile-menu.js"></script>
+  <script>
+    AOS.init({
+      duration: 600,
+      once: true,
+    });
+  </script>
 </body>
 </html>
