@@ -421,14 +421,21 @@
               </li>
             </ul>
 
-          <img
-            src="./images/contacts@X1.jpg"
-            alt="Florist holding beautiful flowers in flower shop"
-            width="600"
-            height="450"
-            class="contacts-picture"
-            loading="lazy"
-          />
+          <picture>
+            <source
+              type="image/webp"
+              srcset="./images/contacts@X1.webp 1x, ./images/contacts@X2.webp 2x"
+            />
+            <img
+              src="./images/contacts@X1.jpg"
+              srcset="./images/contacts@X2.jpg 2x"
+              alt="Florist holding beautiful flowers in flower shop"
+              width="640"
+              height="360"
+              class="contacts-picture"
+              loading="lazy"
+            />
+          </picture>
         </div>
       </section>
     </main>
