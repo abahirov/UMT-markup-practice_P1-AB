@@ -259,7 +259,8 @@ body.menu-open {
 
 .about-picture img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 335 / 428;
+  object-fit: cover;
   border-radius: var(--radius-lg);
 }
 
@@ -636,6 +637,10 @@ body.menu-open {
 
   .about-picture {
     flex: 1;
+  }
+
+  .about-picture img {
+    aspect-ratio: 600 / 428;
   }
 
   .bouquet-list {
