@@ -380,6 +380,10 @@ body.menu-open {
   opacity: 1;
 }
 
+.bestsellers-pagination .pagination-buttons {
+  display: none;
+}
+
 .pagination-buttons {
   display: flex;
   gap: 16px;
@@ -521,7 +525,7 @@ body.menu-open {
 
 .contacts-picture {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 335 / 312;
   object-fit: cover;
   border-radius: var(--radius-lg);
 }
@@ -533,44 +537,67 @@ body.menu-open {
 }
 
 .footer-logo {
-  width: 170px;
+  width: 294px;
   height: auto;
   display: block;
 }
 
+.footer {
+  padding-block: 48px;
+}
+
 .footer-inner {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 24px;
-  padding-block: 48px 32px;
+  gap: 80px;
   text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  width: 100%;
 }
 
 .footer-navigation-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 12px 24px;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
 }
 
 .social-list {
   display: flex;
-  gap: 16px;
+  justify-content: center;
+  gap: 24px;
+  width: 100%;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.footer-credits {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
 }
 
 .footer-divider {
   width: 100%;
   border: none;
-  border-top: 1px solid rgba(3, 12, 1, 0.2);
-  margin-top: 16px;
+  border-top: 1px solid rgba(3, 12, 1, 0.15);
+  margin: 0;
 }
 
 .footer-copyright {
-  width: 100%;
   margin: 0;
-  padding-top: 24px;
 }
 
 /* =========================================================
@@ -632,6 +659,10 @@ body.menu-open {
     width: 406px;
   }
 
+  .bestsellers-pagination .pagination-buttons {
+    display: flex;
+  }
+
   .feedback-list {
     flex-direction: row;
   }
@@ -673,19 +704,27 @@ body.menu-open {
     grid-column: 1 / span 2;
     grid-row: 4;
     margin-top: 24px;
+    aspect-ratio: 16 / 9;
   }
 
   .footer-inner {
-    justify-content: space-between;
     text-align: left;
   }
 
-  .footer-logo {
-    width: 210px;
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+    width: auto;
   }
 
   .footer-navigation-list {
-    justify-content: flex-start;
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .social-icon {
+    width: 24px;
+    height: 24px;
   }
 
   .footer-copyright {
@@ -708,10 +747,6 @@ body.menu-open {
 
   .hero-title {
     font-size: 56px;
-  }
-
-  .footer-logo {
-    width: 280px;
   }
 
   .bouquet-card {
