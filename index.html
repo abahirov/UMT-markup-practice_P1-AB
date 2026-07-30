@@ -93,8 +93,8 @@
               src="./images/hero@X1.jpg"
               srcset="./images/hero@X2.jpg 2x"
               alt="Pink and white bouquet tied with ribbon"
-              width="600"
-              height="450"
+              width="640"
+              height="669"
               loading="lazy"
             />
           </picture>
@@ -342,29 +342,46 @@
         <div class="container">
           <h2 class="section-title">What our clients say</h2>
 
-          <ul class="feedback-list">
-            <li class="feedback-card" data-aos="fade-up" data-aos-delay="100">
-              <p class="feedback-text">
-                Ordered this for our anniversary and honestly it looked better
-                in person than in the photos on the site.
-              </p>
-              <p class="feedback-author">Emma T.</p>
-            </li>
-            <li class="feedback-card" data-aos="fade-up" data-aos-delay="200">
-              <p class="feedback-text">
-                Showed up right on time, flowers were fresh, nothing wilted by
-                day two like some other places I've ordered from.
-              </p>
-              <p class="feedback-author">Daniel R.</p>
-            </li>
-            <li class="feedback-card" data-aos="fade-up" data-aos-delay="0">
-              <p class="feedback-text">
-                Asked for a small change to the order last minute and they just
-                handled it, no fuss.
-              </p>
-              <p class="feedback-author">Olivia M.</p>
-            </li>
-          </ul>
+          <div class="feedback-slider-wrapper">
+            <ul class="feedback-list">
+              <li class="feedback-card" data-aos="fade-up" data-aos-delay="100">
+                <p class="feedback-text">
+                  Ordered this for our anniversary and honestly it looked better
+                  in person than in the photos on the site.
+                </p>
+                <p class="feedback-author">Emma T.</p>
+              </li>
+              <li class="feedback-card" data-aos="fade-up" data-aos-delay="200">
+                <p class="feedback-text">
+                  Showed up right on time, flowers were fresh, nothing wilted by
+                  day two like some other places I've ordered from.
+                </p>
+                <p class="feedback-author">Daniel R.</p>
+              </li>
+              <li class="feedback-card" data-aos="fade-up" data-aos-delay="0">
+                <p class="feedback-text">
+                  Asked for a small change to the order last minute and they just
+                  handled it, no fuss.
+                </p>
+                <p class="feedback-author">Olivia M.</p>
+              </li>
+            </ul>
+
+            <div class="feedback-pagination">
+              <div class="pagination-buttons">
+                <button type="button" class="slider-btn prev-btn" aria-label="Previous">
+                  <svg width="24" height="24">
+                    <use href="./images/icons.svg#left-arrow-alt"></use>
+                  </svg>
+                </button>
+                <button type="button" class="slider-btn next-btn" aria-label="Next">
+                  <svg width="24" height="24">
+                    <use href="./images/icons.svg#right-arrow-alt"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -453,6 +470,7 @@
           </li>
         </ul>
 
+        <hr class="footer-divider" />
         <p class="footer-copyright">© 2026 Flora. All rights reserved.</p>
       </div>
     </footer>
@@ -474,7 +492,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="./js/mobile-menu.js"></script>
-    <script src="./js/bestsellers-slider.js"></script>
+    <script src="./js/slider.js"></script>
     <script>
       AOS.init({
         duration: 600,

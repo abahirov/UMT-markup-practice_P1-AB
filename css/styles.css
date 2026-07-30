@@ -7,6 +7,7 @@
   --color-button-active-bg: #4a4f46;
   --color-button-text: #030c01;
   --color-accent: #42ed13;
+  --color-footer-bg: #eeee60;
 
   --font-heading: "Hanuman", serif;
   --font-body: "Roboto", sans-serif;
@@ -243,7 +244,8 @@ body.menu-open {
 
 .bouquet-card img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   border-radius: 12px;
 }
 
@@ -354,21 +356,49 @@ body.menu-open {
 
 /* ---------- Feedback ---------- */
 
+.feedback-slider-wrapper {
+  position: relative;
+}
+
 .feedback-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: nowrap;
   gap: 20px;
   padding-block: 24px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.feedback-list::-webkit-scrollbar {
+  display: none;
 }
 
 .feedback-card {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
   padding: 20px;
   background-color: var(--color-bg);
+  border: 1px solid #e6e6e6;
   border-radius: 12px;
+}
+
+.feedback-text {
+  margin: 0;
 }
 
 .feedback-author {
   font-weight: 600;
+  margin-top: auto;
+  padding-top: 16px;
+}
+
+.feedback-pagination {
+  display: flex;
+  justify-content: flex-end;
   margin-top: 8px;
 }
 
@@ -405,29 +435,51 @@ body.menu-open {
 
 .contacts-picture {
   width: 100%;
-  height: 320px;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  object-position: center 25%;
   border-radius: 12px;
 }
 
 /* ---------- Footer ---------- */
 
 .footer {
-  background-color: var(--color-accent);
+  background-color: var(--color-footer-bg);
 }
 
 .footer-inner {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
   gap: 20px;
   padding-block: 32px;
   text-align: center;
 }
 
+.footer-navigation-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 24px;
+}
+
 .social-list {
   display: flex;
   gap: 16px;
+}
+
+.footer-divider {
+  width: 100%;
+  border: none;
+  border-top: 1px solid rgba(3, 12, 1, 0.15);
+  margin: 0;
+}
+
+.footer-copyright {
+  width: 100%;
+  margin: 0;
+  padding-top: 20px;
 }
 
 /* =========================================================
@@ -531,13 +583,20 @@ body.menu-open {
     grid-column: 1 / span 2;
     grid-row: 4;
     margin-top: 16px;
-    height: 396px;
+    aspect-ratio: 21 / 9;
   }
 
   .footer-inner {
-    flex-direction: row;
     justify-content: space-between;
     text-align: left;
+  }
+
+  .footer-navigation-list {
+    justify-content: flex-start;
+  }
+
+  .footer-copyright {
+    text-align: center;
   }
 }
 

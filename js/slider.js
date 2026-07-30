@@ -1,21 +1,22 @@
-const wrapper = document.querySelector('.bestsellers-slider-wrapper');
-
-if (wrapper) {
-  const list = wrapper.querySelector('.bestsellers-list');
+function initSlider(wrapper, listSelector) {
+  const list = wrapper.querySelector(listSelector);
   const prevBtn = wrapper.querySelector('.prev-btn');
   const nextBtn = wrapper.querySelector('.next-btn');
   const dotsContainer = wrapper.querySelector('.pagination-dots');
   const cards = Array.from(list.children);
 
-  cards.forEach((_, index) => {
-    const dot = document.createElement('li');
-    dot.classList.add('dot');
-    if (index === 0) dot.classList.add('active');
-    dot.addEventListener('click', () => scrollToCard(index));
-    dotsContainer.appendChild(dot);
-  });
+  let dots = [];
 
-  const dots = Array.from(dotsContainer.children);
+  if (dotsContainer) {
+    cards.forEach((_, index) => {
+      const dot = document.createElement('li');
+      dot.classList.add('dot');
+      if (index === 0) dot.classList.add('active');
+      dot.addEventListener('click', () => scrollToCard(index));
+      dotsContainer.appendChild(dot);
+    });
+    dots = Array.from(dotsContainer.children);
+  }
 
   function getStep() {
     const cardWidth = cards[0].getBoundingClientRect().width;
@@ -29,7 +30,7 @@ if (wrapper) {
 
   function updateControls() {
     const step = getStep();
-    const activeIndex = Math.round(list.scrollLeft / step);
+    const activeIndex = step ? Math.round(list.scrollLeft / step) : 0;
     const maxScroll = list.scrollWidth - list.clientWidth;
 
     dots.forEach((dot, index) => {
@@ -52,4 +53,14 @@ if (wrapper) {
   window.addEventListener('resize', () => requestAnimationFrame(updateControls));
 
   updateControls();
+}
+
+const bestsellersWrapper = document.querySelector('.bestsellers-slider-wrapper');
+if (bestsellersWrapper) {
+  initSlider(bestsellersWrapper, '.bestsellers-list');
+}
+
+const feedbackWrapper = document.querySelector('.feedback-slider-wrapper');
+if (feedbackWrapper) {
+  initSlider(feedbackWrapper, '.feedback-list');
 }
