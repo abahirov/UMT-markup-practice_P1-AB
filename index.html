@@ -136,7 +136,8 @@
         <div class="container">
           <h2 class="section-title">Top-Selling Bouquets</h2>
 
-          <ul class="bouquet-list">
+          <div class="bestsellers-slider-wrapper">
+          <ul class="bouquet-list bestsellers-list">
             <li class="bouquet-card" data-aos="fade-up" data-aos-delay="100">
               <picture>
                 <source
@@ -214,6 +215,23 @@
               <p class="bouquet-price">$40</p>
             </li>
           </ul>
+
+          <div class="bestsellers-pagination">
+            <ul class="pagination-dots"></ul>
+            <div class="pagination-buttons">
+              <button type="button" class="slider-btn prev-btn" aria-label="Previous">
+                <svg width="24" height="24">
+                  <use href="./images/icons.svg#left-arrow-alt"></use>
+                </svg>
+              </button>
+              <button type="button" class="slider-btn next-btn" aria-label="Next">
+                <svg width="24" height="24">
+                  <use href="./images/icons.svg#right-arrow-alt"></use>
+                </svg>
+              </button>
+            </div>
+          </div>
+          </div>
         </div>
       </section>
 
@@ -228,7 +246,7 @@
           <ul class="bouquet-list bouquet-list-grid">
             <li class="bouquet-card" data-aos="fade-up" data-aos-delay="0">
               <img
-                src="./images/bouquet-5@X1.jpg"
+                src="./images/bouquet-1@X1.jpg"
                 alt="Peach Meadow bouquet with peach and blush roses"
                 width="280"
                 height="280"
@@ -239,7 +257,7 @@
             </li>
             <li class="bouquet-card" data-aos="fade-up" data-aos-delay="100">
               <img
-                src="./images/bouquet-6@X1.jpg"
+                src="./images/bouquet-2@X1.jpg"
                 alt="Blush Romance bouquet with pink and ivory roses"
                 width="280"
                 height="280"
@@ -250,7 +268,7 @@
             </li>
             <li class="bouquet-card" data-aos="fade-up" data-aos-delay="200">
               <img
-                src="./images/bouquet-7@X1.jpg"
+                src="./images/bouquet-3@X1.jpg"
                 alt="Pastel Garden bouquet with spray roses"
                 width="280"
                 height="280"
@@ -261,7 +279,7 @@
             </li>
             <li class="bouquet-card" data-aos="fade-up" data-aos-delay="300">
               <img
-                src="./images/bouquet-8@X1.jpg"
+                src="./images/bouquet-4@X1.jpg"
                 alt="Tulip Charm bouquet with bright tulips and roses"
                 width="280"
                 height="280"
@@ -269,6 +287,50 @@
               />
               <h3 class="bouquet-title">Tulip Charm</h3>
               <p class="bouquet-price">$61</p>
+            </li>
+            <li class="bouquet-card" data-aos="fade-up" data-aos-delay="0">
+              <img
+                src="./images/bouquet-5@X1.jpg"
+                alt="Berry Bloom bouquet with pink, purple and cream blooms"
+                width="280"
+                height="280"
+                loading="lazy"
+              />
+              <h3 class="bouquet-title">Berry Bloom</h3>
+              <p class="bouquet-price">$32</p>
+            </li>
+            <li class="bouquet-card" data-aos="fade-up" data-aos-delay="100">
+              <img
+                src="./images/bouquet-6@X1.jpg"
+                alt="Sweet Whisper bouquet with peonies, roses and lilac-toned accents"
+                width="280"
+                height="280"
+                loading="lazy"
+              />
+              <h3 class="bouquet-title">Sweet Whisper</h3>
+              <p class="bouquet-price">$40</p>
+            </li>
+            <li class="bouquet-card" data-aos="fade-up" data-aos-delay="200">
+              <img
+                src="./images/bouquet-7@X1.jpg"
+                alt="Field Joy bouquet with sunflowers, lisianthus and daisies"
+                width="280"
+                height="280"
+                loading="lazy"
+              />
+              <h3 class="bouquet-title">Field Joy</h3>
+              <p class="bouquet-price">$49</p>
+            </li>
+            <li class="bouquet-card" data-aos="fade-up" data-aos-delay="300">
+              <img
+                src="./images/bouquet-8@X1.jpg"
+                alt="Soft Bloom bouquet with pink carnations and roses"
+                width="280"
+                height="280"
+                loading="lazy"
+              />
+              <h3 class="bouquet-title">Soft Bloom</h3>
+              <p class="bouquet-price">$37</p>
             </li>
           </ul>
 
@@ -308,14 +370,14 @@
 
       <section id="contacts" class="contacts">
         <div class="container contacts-inner">
-          <div class="contacts-content">
-            <h2 class="section-title">Get in Touch</h2>
-            <p class="section-text">
-              Got a question about an order, or just want to ask if we can do a
-              specific arrangement? Reach out below.
-            </p>
+          <p class="contacts-eyebrow">Connect</p>
+          <h2 class="section-title">Get in Touch</h2>
+          <p class="section-text contacts-subtitle">
+            Got a question about an order, or just want to ask if we can do a
+            specific arrangement? Reach out below.
+          </p>
 
-            <ul class="contacts-list">
+          <ul class="contacts-list">
               <li class="contacts-item">
                 <svg width="24" height="24">
                   <use href="./images/icons.svg#phone"></use>
@@ -341,7 +403,6 @@
                 </div>
               </li>
             </ul>
-          </div>
 
           <img
             src="./images/contacts@X1.jpg"
@@ -413,6 +474,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script src="./js/mobile-menu.js"></script>
+    <script src="./js/bestsellers-slider.js"></script>
     <script>
       AOS.init({
         duration: 600,
