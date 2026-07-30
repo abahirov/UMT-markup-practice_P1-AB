@@ -187,21 +187,11 @@ body.menu-open {
 /* ---------- Hero ---------- */
 
 .hero {
-  background-color: var(--color-bg-secondary);
-  background-image: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.92) 0%,
-      rgba(255, 255, 255, 0.55) 42%,
-      rgba(255, 255, 255, 0) 68%
-    ), url("../images/hero@X1.jpg");
-  background-image: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0.92) 0%,
-      rgba(255, 255, 255, 0.55) 42%,
-      rgba(255, 255, 255, 0) 68%
-    ), image-set(url("../images/hero@X1.webp") 1x, url("../images/hero@X2.webp") 2x);
+  background-color: #d9d9d9;
+  background-image: url("../images/hero@X1.jpg");
+  background-image: image-set(url("../images/hero@X1.webp") 1x, url("../images/hero@X2.webp") 2x);
   background-size: cover;
-  background-position: center right;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
