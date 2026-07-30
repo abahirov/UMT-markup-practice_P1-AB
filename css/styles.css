@@ -67,10 +67,10 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 12px 24px;
+  padding: 10px 24px;
   border: none;
   border-radius: var(--radius-pill);
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
   text-decoration: none;
   transition: background-color var(--transition-base), opacity var(--transition-base);
@@ -129,6 +129,7 @@ body {
 
 .header-cta {
   display: none;
+  padding: 8px 20px;
 }
 
 .menu-toggle {
@@ -187,19 +188,30 @@ body.menu-open {
 
 .hero {
   background-color: var(--color-bg-secondary);
+  background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.55) 42%,
+      rgba(255, 255, 255, 0) 68%
+    ), url("../images/hero@X1.jpg");
+  background-image: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.92) 0%,
+      rgba(255, 255, 255, 0.55) 42%,
+      rgba(255, 255, 255, 0) 68%
+    ), image-set(url("../images/hero@X1.webp") 1x, url("../images/hero@X2.webp") 2x);
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
 }
 
 .hero-inner {
-  padding-block: var(--space-section);
+  padding-block: 80px;
   display: flex;
-  flex-direction: column;
-  gap: 32px;
 }
 
-.hero-picture img {
-  width: 100%;
-  height: auto;
-  border-radius: var(--radius-lg);
+.hero-content {
+  max-width: 667px;
 }
 
 .hero-title {
@@ -240,6 +252,21 @@ body.menu-open {
   margin: 0;
 }
 
+.bestsellers .section-title,
+.feedback .section-title {
+  margin-bottom: 0;
+}
+
+.bouquets .section-title {
+  margin-bottom: 16px;
+}
+
+.bouquets .section-title,
+.bouquets .section-text,
+.feedback .section-title {
+  text-align: center;
+}
+
 .about-picture img {
   width: 100%;
   height: auto;
@@ -261,7 +288,7 @@ body.menu-open {
   display: flex;
   flex-direction: column;
   gap: 32px;
-  padding-block: 32px;
+  padding-top: 32px;
 }
 
 .bouquet-card img {
@@ -291,10 +318,20 @@ body.menu-open {
   margin: 8px 0 0;
 }
 
+.show-more-button {
+  display: flex;
+  width: fit-content;
+  margin: 48px auto 0;
+}
+
+.bouquet-list-grid .bouquet-card {
+  text-align: center;
+}
+
 .bestsellers,
 .bouquets,
 .feedback {
-  background-color: var(--color-bg-secondary);
+  padding-block: var(--space-section);
 }
 
 /* ---------- Bestsellers slider ---------- */
@@ -324,9 +361,10 @@ body.menu-open {
 
 .bestsellers-pagination {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  margin-top: 32px;
+  gap: 24px;
+  margin-top: 48px;
 }
 
 .pagination-dots {
@@ -342,13 +380,14 @@ body.menu-open {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: var(--color-border);
+  background-color: var(--color-text);
+  opacity: 0.2;
   cursor: pointer;
-  transition: background-color var(--transition-base);
+  transition: opacity var(--transition-base);
 }
 
 .pagination-dots .dot.active {
-  background-color: var(--color-text);
+  opacity: 1;
 }
 
 .pagination-buttons {
@@ -362,9 +401,9 @@ body.menu-open {
   justify-content: center;
   width: 48px;
   height: 48px;
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(3, 12, 1, 0.15);
   border-radius: 50%;
-  background-color: transparent;
+  background-color: var(--color-bg);
   color: var(--color-text);
   cursor: pointer;
   padding: 0;
@@ -398,8 +437,8 @@ body.menu-open {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 20px;
-  padding-block: 32px;
+  gap: 32px;
+  padding-top: 32px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -417,7 +456,7 @@ body.menu-open {
   justify-content: space-between;
   padding: 32px;
   background-color: var(--color-bg);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(3, 12, 1, 0.15);
   border-radius: var(--radius-lg);
 }
 
@@ -433,7 +472,7 @@ body.menu-open {
 .feedback-pagination {
   display: flex;
   justify-content: flex-end;
-  margin-top: 8px;
+  margin-top: 32px;
 }
 
 /* ---------- Contacts ---------- */
@@ -443,6 +482,10 @@ body.menu-open {
   flex-direction: column;
   gap: 16px;
   padding-block: var(--space-section);
+}
+
+.contacts-inner picture {
+  display: contents;
 }
 
 .contacts-eyebrow {
@@ -561,18 +604,8 @@ body.menu-open {
     display: none;
   }
 
-  .hero-inner {
-    flex-direction: row;
-    align-items: center;
-    gap: 32px;
-  }
-
-  .hero-content {
-    flex: 1.15;
-  }
-
-  .hero-picture {
-    flex: 0.85;
+  .hero {
+    min-height: 669px;
   }
 
   .about-inner {
@@ -593,12 +626,20 @@ body.menu-open {
     flex-wrap: wrap;
   }
 
+  .bouquet-list-grid {
+    gap: 64px 32px;
+  }
+
   .bouquet-card {
     flex: 1 1 calc(50% - 16px);
   }
 
   .bestsellers-list .bouquet-card {
     flex: 0 0 calc(50% - 12px);
+  }
+
+  .show-more-button {
+    width: 406px;
   }
 
   .feedback-list {
@@ -668,7 +709,7 @@ body.menu-open {
   }
 
   .container {
-    padding-inline: 80px;
+    padding-inline: 28px;
   }
 
   .section-title {
@@ -676,7 +717,7 @@ body.menu-open {
   }
 
   .hero-title {
-    font-size: 53px;
+    font-size: 56px;
   }
 
   .footer-logo {
