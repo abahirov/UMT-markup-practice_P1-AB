@@ -8,6 +8,7 @@
   --color-button-text: #030c01;
   --color-accent: #42ed13;
   --color-footer-bg: #eeee60;
+  --color-border: #d9d9d9;
 
   --font-heading: "Hanuman", serif;
   --font-body: "Roboto", sans-serif;
@@ -22,6 +23,13 @@
 
   --lh-heading: 1.2;
   --lh-text: 1.5;
+
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-pill: 999px;
+
+  --space-section: 64px;
+  --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 *,
@@ -30,10 +38,20 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
 body {
   font-family: var(--font-body);
   color: var(--color-text);
   background-color: var(--color-bg);
+  overflow-x: hidden;
 }
 
 .container {
@@ -51,11 +69,11 @@ body {
   justify-content: center;
   padding: 12px 24px;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--radius-pill);
   font-weight: 600;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-base), opacity var(--transition-base);
 }
 
 .button-primary {
@@ -64,7 +82,7 @@ body {
 }
 
 .button-primary:hover,
-.button-primary:focus {
+.button-primary:focus-visible {
   background: var(--color-button-hover-bg);
 }
 
@@ -93,7 +111,7 @@ body {
 .navigation-list {
   display: none;
   list-style: none;
-  gap: 24px;
+  gap: 32px;
   margin: 0;
   padding: 0;
 }
@@ -101,12 +119,12 @@ body {
 .nav-link {
   color: var(--color-text);
   text-decoration: none;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity var(--transition-base);
 }
 
 .nav-link:hover,
-.nav-link:focus {
-  color: var(--color-accent);
+.nav-link:focus-visible {
+  opacity: 0.6;
 }
 
 .header-cta {
@@ -115,10 +133,13 @@ body {
 
 .menu-toggle {
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
 }
 
 .menu-icon-close {
@@ -141,7 +162,7 @@ body {
   padding-top: 72px;
   background-color: var(--color-bg);
   transform: translateX(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform var(--transition-base);
   z-index: 150;
 }
 
@@ -155,7 +176,7 @@ body {
   padding: 24px 0;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 body.menu-open {
@@ -169,16 +190,16 @@ body.menu-open {
 }
 
 .hero-inner {
-  padding-block: 48px;
+  padding-block: var(--space-section);
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
 .hero-picture img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
 }
 
 .hero-title {
@@ -186,13 +207,14 @@ body.menu-open {
   font-size: var(--size-hero);
   font-weight: var(--weight-heading);
   line-height: var(--lh-heading);
-  margin: 0;
+  letter-spacing: -0.01em;
+  margin: 0 0 24px;
 }
 
 .hero-text {
   font-size: var(--size-text);
   line-height: var(--lh-text);
-  margin: 0;
+  margin: 0 0 32px;
 }
 
 /* ---------- About ---------- */
@@ -200,13 +222,13 @@ body.menu-open {
 .about-inner {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding-block: 48px;
+  gap: 32px;
+  padding-block: var(--space-section);
 }
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: var(--size-h2);
+  font-size: 34px;
   font-weight: var(--weight-heading);
   line-height: var(--lh-heading);
   margin: 0 0 12px;
@@ -221,7 +243,7 @@ body.menu-open {
 .about-picture img {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
 }
 
 /* ---------- Bouquet cards ---------- */
@@ -238,34 +260,35 @@ body.menu-open {
 .bouquet-list {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding-block: 24px;
+  gap: 32px;
+  padding-block: 32px;
 }
 
 .bouquet-card img {
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 296px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
 }
 
 .bouquet-title {
   font-family: var(--font-heading);
-  font-size: 20px; /* TODO: verify against Figma — global --size-h3 (40px) looked too large for card titles */
-  font-weight: var(--weight-heading);
+  font-size: 18px;
+  font-weight: 600;
   line-height: var(--lh-heading);
-  margin: 12px 0 4px;
+  margin: 16px 0 0;
 }
 
 .bouquet-description {
   font-size: 14px;
   color: var(--color-text);
-  margin: 0 0 8px;
+  margin: 4px 0 0;
 }
 
 .bouquet-price {
-  font-weight: 700;
-  margin: 0;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 8px 0 0;
 }
 
 .bestsellers,
@@ -284,6 +307,7 @@ body.menu-open {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  gap: 24px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -298,11 +322,15 @@ body.menu-open {
   scroll-snap-align: start;
 }
 
+.bestsellers-list .bouquet-card img {
+  height: 320px;
+}
+
 .bestsellers-pagination {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 8px;
+  margin-top: 32px;
 }
 
 .pagination-dots {
@@ -318,39 +346,49 @@ body.menu-open {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #d9d9d9;
+  background-color: var(--color-border);
   cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color var(--transition-base);
 }
 
 .pagination-dots .dot.active {
-  background-color: var(--color-accent);
+  background-color: var(--color-text);
 }
 
 .pagination-buttons {
   display: flex;
-  gap: 12px;
+  gap: 16px;
 }
 
 .slider-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  border: 1px solid #d9d9d9;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-border);
   border-radius: 50%;
-  background: none;
+  background-color: transparent;
+  color: var(--color-text);
   cursor: pointer;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  transition: border-color var(--transition-base), background-color var(--transition-base);
 }
 
-.slider-btn:hover:not(:disabled) {
-  border-color: var(--color-accent);
+.slider-btn:hover:not(:disabled),
+.slider-btn:focus-visible:not(:disabled) {
+  background-color: rgba(66, 237, 19, 0.3);
+  border-color: transparent;
+}
+
+.slider-btn:active:not(:disabled) {
+  background: var(--color-button-bg);
+  border-color: transparent;
 }
 
 .slider-btn:disabled {
-  opacity: 0.4;
+  border-color: #f0f0f0;
+  color: #d3d3d3;
   cursor: not-allowed;
 }
 
@@ -365,7 +403,7 @@ body.menu-open {
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 20px;
-  padding-block: 24px;
+  padding-block: 32px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   scrollbar-width: none;
@@ -380,20 +418,20 @@ body.menu-open {
   scroll-snap-align: start;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  justify-content: space-between;
+  padding: 32px;
   background-color: var(--color-bg);
-  border: 1px solid #e6e6e6;
-  border-radius: 12px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
 }
 
 .feedback-text {
-  margin: 0;
+  margin: 0 0 24px;
 }
 
 .feedback-author {
   font-weight: 600;
-  margin-top: auto;
-  padding-top: 16px;
+  margin: 0;
 }
 
 .feedback-pagination {
@@ -408,7 +446,7 @@ body.menu-open {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  padding-block: 48px;
+  padding-block: var(--space-section);
 }
 
 .contacts-eyebrow {
@@ -423,21 +461,40 @@ body.menu-open {
 .contacts-list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 24px;
   margin-bottom: 8px;
 }
 
 .contacts-item {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
+  gap: 16px;
+}
+
+.contacts-label {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0 0 4px;
+}
+
+.contacts-link {
+  font-size: 16px;
+  color: var(--color-text);
+  text-decoration: underline;
+  transition: opacity var(--transition-base);
+}
+
+.contacts-link:hover,
+.contacts-link:focus-visible {
+  opacity: 0.7;
 }
 
 .contacts-picture {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: 320px;
   object-fit: cover;
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
 }
 
 /* ---------- Footer ---------- */
@@ -451,8 +508,8 @@ body.menu-open {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding-block: 32px;
+  gap: 24px;
+  padding-block: 48px 32px;
   text-align: center;
 }
 
@@ -460,7 +517,7 @@ body.menu-open {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 8px 24px;
+  gap: 12px 24px;
 }
 
 .social-list {
@@ -471,14 +528,14 @@ body.menu-open {
 .footer-divider {
   width: 100%;
   border: none;
-  border-top: 1px solid rgba(3, 12, 1, 0.15);
-  margin: 0;
+  border-top: 1px solid rgba(3, 12, 1, 0.2);
+  margin-top: 16px;
 }
 
 .footer-copyright {
   width: 100%;
   margin: 0;
-  padding-top: 20px;
+  padding-top: 24px;
 }
 
 /* =========================================================
@@ -486,6 +543,10 @@ body.menu-open {
    ========================================================= */
 
 @media screen and (min-width: 768px) {
+  .container {
+    padding-inline: 32px;
+  }
+
   .navigation-list {
     display: flex;
   }
@@ -498,13 +559,10 @@ body.menu-open {
     display: none;
   }
 
-  .hero-title {
-    font-size: 40px;
-  }
-
   .hero-inner {
     flex-direction: row;
     align-items: center;
+    gap: 32px;
   }
 
   .hero-content {
@@ -534,7 +592,7 @@ body.menu-open {
   }
 
   .bouquet-card {
-    flex: 1 1 calc(50% - 12px);
+    flex: 1 1 calc(50% - 16px);
   }
 
   .bestsellers-list .bouquet-card {
@@ -581,7 +639,8 @@ body.menu-open {
   .contacts-picture {
     grid-column: 1 / span 2;
     grid-row: 4;
-    margin-top: 16px;
+    margin-top: 24px;
+    height: 396px;
   }
 
   .footer-inner {
@@ -599,15 +658,31 @@ body.menu-open {
 }
 
 @media screen and (min-width: 1440px) {
+  :root {
+    --space-section: 92px;
+  }
+
+  .container {
+    padding-inline: 80px;
+  }
+
+  .section-title {
+    font-size: var(--size-h2);
+  }
+
   .hero-title {
-    font-size: 56px;
+    font-size: 53px;
   }
 
   .bouquet-card {
-    flex: 1 1 calc(25% - 18px);
+    flex: 1 1 calc(25% - 24px);
   }
 
   .bestsellers-list .bouquet-card {
     flex: 0 0 calc(33.333% - 16px);
+  }
+
+  .contacts-picture {
+    height: 480px;
   }
 }
